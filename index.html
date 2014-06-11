@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <style>
+      textarea {
+        width: 100%;
+        height: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>1. Enter your raw text here</p>
+    <textarea id="unconverted"></textarea>
+    <p>2. Press this button</p>
+    <button id="convert-button">Convert!</button>
+    <p>3. Copy your safe JSON string from here</p>
+    <textarea id="converted"></textarea>
+
+    <script>
+      var button = document.getElementById('convert-button'),
+          unconvertedArea = document.getElementById('unconverted'),
+          convertedArea = document.getElementById('converted');
+
+      button.addEventListener('click', function() {
+        convertedArea.value = JSON.stringify(unconvertedArea.value);
+      });
+    </script>
+  </body>
+</html>
